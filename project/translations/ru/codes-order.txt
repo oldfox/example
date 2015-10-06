@@ -1,0 +1,13 @@
+Header: Заказ кодов
+label-quantity: Количество
+label-prefix: Префикс
+label-codetype: Тип
+label-product: Товарная карта
+label-capacity: Разрядность
+label-comment: Комментарий
+order-submit: Заказать
+
+invalid-required-quantity: Заполните количество
+invalid-required-codetype: Укажите тип
+
+order-created: Создан заказ №{{uid}}

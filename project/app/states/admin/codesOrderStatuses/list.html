@@ -1,0 +1,18 @@
+<div ng-controller="AdminCodesOrderStatusesCtrl">
+
+  <div og-datagrid="codesOrderStatuses">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span translate="admin-codesOrderStatuses.column-name"></span>
+    </div>
+    <div og-datagrid-item="codesOrderStatus">
+        <span>
+          {{codesOrderStatus.name}}
+        </span>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,24 @@
+<form name="loginFormForm"
+      novalidate
+      ng-controller="AuthCtrl"
+      ng-submit="loginFormSubmit()"
+      translate-category="login-form"
+      onsubmit="return false;" method="post" action="" class="form-login">
+
+  <div field label>
+    <input og-validate required name="login" ng-model="loginForm.login">
+  </div>
+
+  <div field label="loginForm.passwordLabel">
+    <input og-validate required type="password"  name="password" ng-model="loginForm.password">
+  </div>
+
+  <button type="submit" class="btn btn-default" ng-disabled="loginFormForm.$invalid">
+    <span translate="login-form.login-button"></span>
+  </button>
+  <!--<div class="pull-right">-->
+    <!--<br>-->
+    <!--<a ui-sref="restore"><span translate="login-form.restore-link"></span></a>-->
+  <!--</div>-->
+
+</form>

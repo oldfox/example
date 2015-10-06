@@ -1,0 +1,37 @@
+Header: Запросы потребителей
+
+label-from: С
+label-to: По
+
+report-data-submit: Показать
+
+column-created_at: Дата/время
+column-sname: Средство проверки
+column-txt: Текст
+column-code: Код
+column-nname: Товар
+column-series: Серия
+column-cdate: Дата выпуска
+column-expdate: Годен до
+column-ucnt: Проверок
+column-address: Адрес
+column-abuse: Обращение
+
+column-fio: Пользователь
+
+dialog-header: Обращение потребителя
+
+abuse-id: ID
+abuse-cdate: Дата
+abuse-description: Текст
+abuse-person-fio: ФИО
+abuse-person-email: E-mail
+abuse-person-city: Город
+abuse-person-phone: Телефон
+abuse-shopname: Магазин
+abuse-shopaddr: Адрес магазина
+
+abuse-product-code: Код
+abuse-product-name: Продукт
+
+

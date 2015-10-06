@@ -1,0 +1,44 @@
+<h2><span translate="codes-order.Header"></span></h2>
+
+  <br>
+  <form name="CodesOrderForm" class=""
+        ng-submit="submitCodesOrder(CodesOrder)"
+        translate-category="codes-order"
+        novalidate autocomplete="off">
+
+    <div field class="col-xs-12 col-md-4" label>
+      <input og-validate name="quantity" required type="number" ng-model="CodesOrder.quantity"/>
+    </div>
+
+    <div field class="col-xs-12 col-md-4" label>
+      <og-select og-validate name="codetype" ng-model="CodesOrder.codetype" required>
+        <option item="codeType" list="codeTypes">
+          {{codeType.name}}
+        </option>
+      </og-select>
+
+    </div>
+
+    <div ng-hide="resetProduct(CodesOrder.codetype.uid==2)">
+
+    <div field class="col-xs-12 col-md-4" label>
+      <og-select og-validate name="product" ng-model="CodesOrder.product" ng-required="CodesOrder.codetype.uid!=2">
+        <option item="product" list="products">
+          {{product.nomenclature.name}}/{{product.series}}
+        </option>
+      </og-select>
+    </div>
+    </div>
+
+    <div field class="col-md-12" label>
+      <textarea og-validate name="comment" ng-model="CodesOrder.comment" />
+    </div>
+
+    <div field class="col-xs-12">
+      <br>
+      <button class="btn btn-primary" ng-disabled="CodesOrderForm.$invalid">
+        <span translate="codes-order.order-submit"></span>
+      </button>
+    </div>
+
+  </form>

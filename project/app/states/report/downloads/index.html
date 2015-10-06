@@ -1,0 +1,26 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+<br>
+
+<div og-datagrid="downloads">
+  <div og-datagrid-tools>
+    <div og-datagrid-pagination style="float:right"></div>
+  </div>
+
+  <div og-datagrid-header>
+    <span translate="{{tc}}.column-created_at"></span>
+    <span translate="{{tc}}.column-report_type"></span>
+    <span translate="{{tc}}.column-status"></span>
+ </div>
+  <div og-datagrid-item="item">
+    <span>{{item.created_at|amDateFormat:'lll'}}</span>
+    <span><span translate="{{tc}}.{{item.report_type}}"></span></span>
+    <span>
+      <span ng-if="!item.status" translate="{{tc}}.in-process"></span>
+      <span ng-if="item.status">
+        <a href="{{backend}}reports/{{item.uid}}/download?access-token={{accessToken}}"><span translate="{{tc}}.download"></span></a>
+      </span>
+    </span>
+  </div>
+</div>
+
+<br>

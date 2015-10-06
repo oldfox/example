@@ -1,0 +1,10 @@
+<div id="error-page" layout="column" layout-align="center center">
+  <h1 >
+    <span ng-if="!$root.error">404</span>
+    <span ng-if="$root.error"><span translate="{{ $root.error.code }}"></span></span>
+  </h1>
+
+  <p ng-if="!$root.error"><span translate="errors.pageNotFound"></span></p>
+  <p ng-if="!$root.error.message"><span translate="{{ $root.error.message }}"></span></p>
+
+</div>

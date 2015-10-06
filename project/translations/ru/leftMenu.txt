@@ -1,0 +1,4 @@
+codes: Коды
+codes-codeOrder: Заказ кодов
+codes-codeCheck: Проверка кодов
+catalogs: Справочники

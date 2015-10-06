@@ -1,0 +1,96 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+
+  <br>
+
+<form
+  name="CodesRecallForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  >
+
+
+  <tabset>
+    <tab active="tabs.byCodes">
+      <tab-heading><span translate="{{tc}}.enter-codes-list"></span></tab-heading>
+
+      <br>
+      <div field label>
+        <textarea og-validate ng-required="tabs.byCodes" og-backend name="codesList" ng-model="CodesRecall.codesList" ></textarea>
+      </div>
+
+    </tab>
+
+    <tab active="tabs.byDates">
+      <tab-heading><span translate="{{tc}}.enter-codes-date-range"></span></tab-heading>
+
+      <br>
+      <div class="row">
+
+        <div field label  class="col-md-4">
+          <input og-datepicker
+                 og-validate ng-required="tabs.byDates"
+                 name="createdFrom" ng-model="CodesRecall.createdFrom"
+            />
+        </div>
+
+        <div field label  class="col-md-4">
+          <input og-datepicker
+                 og-validate ng-required="tabs.byDates"
+                 name="createdTo" ng-model="CodesRecall.createdTo"
+            />
+        </div>
+
+        <div field label class="col-md-4">
+          <input
+            og-validate ng-required="tabs.byDates"
+            type="text" name="series" ng-model="CodesRecall.series"
+            />
+        </div>
+
+      </div>
+
+
+    </tab>
+  </tabset>
+
+
+  <div field label>
+    <textarea og-validate required name="note" ng-model="CodesRecall.note"></textarea>
+  </div>
+
+  <div>
+    <button access-permissions="codeFunction-removed" class="btn btn-primary" ng-click="submitRecall('removed')" ng-disabled="CodesRecallForm.$invalid">
+      <span translate="{{tc}}.recovery-submit"></span>
+    </button>
+    &nbsp;
+
+    <button access-permissions="codeFunction-defected" class="btn btn-primary" ng-click="submitRecall('defected')" ng-disabled="CodesRecallForm.$invalid">
+      <span translate="{{tc}}.refuse-submit"></span>
+    </button>
+    &nbsp;
+
+    <button access-permissions="codeFunction-claim" class="btn btn-primary" ng-click="submitRecall('claim')" ng-disabled="CodesRecallForm.$invalid">
+      <span translate="{{tc}}.fake-submit"></span>
+    </button>
+  </div>
+
+
+</form>
+
+<!--<div ng-if="errors">-->
+  <!--<br>-->
+
+  <!--<div class="panel panel-danger">-->
+    <!--<div class="panel-body bg-danger text-danger">-->
+      <!--<div ng-repeat="error in errors">-->
+        <!--<b>{{error.message}}</b>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+  <!--<br>-->
+  <!--<div >-->
+    <!--<code>{{ans}}</code>-->
+
+    <!--<pre>{{CodesRecallForm.codesList}}</pre>-->
+  <!--</div>-->

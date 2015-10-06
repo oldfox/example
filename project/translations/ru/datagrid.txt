@@ -1,0 +1,7 @@
+perPage: по
+emptyResult: Данные не найдены
+
+download-input: Метка файла выгрузки
+download-button: Выгрузить
+
+download-ordered: Выгрузка списка создана. <br>Ссылка для скачивания будет {{start_link}}на странице загрузок{{end_link}}.

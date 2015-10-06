@@ -1,0 +1,63 @@
+<form name="EditProductForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  ng-submit="save(EditProduct)"
+  >
+
+  <div field label>
+    <input og-validate required type="text" name="series" ng-model="EditProduct.series" />
+  </div>
+
+  <div field label>
+    <og-select
+      name="nomenclature" ng-model="EditProduct.nomenclature"
+      og-validate required
+      size="5"
+      ng-change="setValidTo()"
+      >
+      <option item="nomenclature" list="nomenclatures">{{nomenclature.name}}</option>
+    </og-select>
+  </div>
+
+  <!--<div>-->
+
+    <!--<p class="input-group" ng-init="opened=false">-->
+      <!--<input type="text"-->
+             <!--datepicker-popup name="cdate" ng-model="EditProduct.cdate" ng-click="opened=!opened"-->
+             <!--required-->
+             <!--is-open="opened" />-->
+
+    <!--</p>-->
+  <!--</div>-->
+
+
+
+  <div field label>
+
+    <input name="dateValidFrom" ng-model="EditProduct.dateValidFrom"
+       og-datepicker="{format:'MM YYYY', mode:'month', minMode:'month'}"
+       og-validate required
+       ng-change="setValidTo()"
+    />
+    <!--<input og-validate required type="text" name="ean13" ng-model="EditProduct.ean13" />-->
+  </div>
+
+  <div field label>
+    <input name="dateValidTo" ng-model="EditProduct.dateValidTo"
+      og-datepicker="{format:'MM YYYY', mode:'month', minMode:'month'}"
+      og-validate required
+      />
+    <!--<input og-validate required type="text" name="ean13" ng-model="EditProduct.ean13" />-->
+  </div>
+
+
+
+
+  <!--<div class="modal-footer">-->
+    <button class="btn btn-primary" type="submit" ng-disabled="EditProductForm.$invalid">
+      <span ng-show="mode=='edit'" translate="{{tc}}.save-button"></span>
+      <span ng-show="mode=='new'" translate="{{tc}}.create-button"></span>
+    </button>
+  <!--</div>-->
+
+</form>

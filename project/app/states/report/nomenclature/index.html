@@ -1,0 +1,118 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+<br>
+
+<form
+  name="ReportDataForm"
+  translate-category="{{tc}}"
+  ng-submit="getReport()"
+  >
+
+  <tabset>
+    <tab active="tabs.byCodes">
+      <tab-heading><span translate="{{tc}}.by-codes-list"></span></tab-heading>
+
+      <br>
+      <div field label>
+        <textarea
+            og-validate
+            name="codesList" ng-model="ReportData.codesList"
+            ng-required="tabs.byCodes"
+          ></textarea>
+      </div>
+
+    </tab>
+    <tab active="tabs.byDates">
+      <tab-heading ><span translate="{{tc}}.by-date-from-to"></span></tab-heading>
+
+      <br>
+      <div class="row">
+
+        <div field label  class="col-md-4">
+          <input og-datepicker
+                 name="createdFrom" ng-model="ReportData.createdFrom"
+                 og-validate ng-required="tabs.byDates"
+            />
+        </div>
+
+        <div field label  class="col-md-4">
+          <input og-datepicker
+                 name="createdTo" ng-model="ReportData.createdTo"
+                 og-validate ng-required="tabs.byDates"
+            />
+        </div>
+
+        <div field label class="col-md-4">
+          <input
+            og-validate type="text" name="series" ng-model="ReportData.series"
+            ng-required="tabs.byDates && !(ReportData.createdFrom && ReportData.createdTo)"
+            />
+        </div>
+
+      </div>
+    </tab>
+  </tabset>
+
+  <br>
+  <div>
+    <button class="btn btn-primary" ng-disabled="ReportDataForm.$invalid">
+      <span translate="{{tc}}.report-data-submit"></span>
+    </button>
+  </div>
+
+</form>
+
+
+
+  <br>
+
+
+
+  <div ng-show="showResultGrid" og-datagrid="reportResult">
+    <div og-datagrid-tools>
+      <div ng-if="reportName=='historyByCode'" og-datagrid-download="historyByCode" style="float:left"></div>
+      <div ng-if="reportName=='historyByDate'" og-datagrid-download="historyByDate" style="float:left"></div>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span translate="{{tc}}.column-created_at"></span>
+      <span w15 translate="{{tc}}.column-code"></span>
+      <span translate="{{tc}}.column-nname"></span>
+      <span translate="{{tc}}.column-operation"></span>
+      <span translate="{{tc}}.column-fio"></span>
+      <span translate="{{tc}}.column-object"></span>
+      <span translate="{{tc}}.column-address"></span>
+      <span w20 translate="{{tc}}.column-data"></span>
+      <span translate="{{tc}}.column-invoice"></span>
+      <span translate="{{tc}}.column-invoice-date"></span>
+    </div>
+    <div og-datagrid-item="item">
+        <span>{{item.created_at|amDateFormat:'D-MM-YY'}}<br>{{item.created_at|amDateFormat:'H:mm'}}</span>
+        <span w15 ng-class="{'group-code':item.codeType.uid==2}"><a ng-href="report/codes?code={{item.code}}">{{item.code}}</a></span>
+        <span>
+          <span ng-if="item.codeType.uid==1">{{item.nname}}/{{item.series}}</span>
+          <span ng-if="item.codeType.uid==2">
+            <span ng-if="!item.childGroup||!item.childGroup.length">-</span>
+            <span ng-repeat="child in item.childGroup track by $index">
+               {{child.name}} - {{child.count}}
+              <span translate="{{tc}}.group-nomenclature-count"></span>
+              <span ng-if="!$last">, </span>
+            </span>
+          </span>
+        </span>
+        <span>{{item.operation}}</span>
+        <span>{{item.fio}}</span>
+        <span>{{item.object}}</span>
+        <span >{{item.address}}</span>
+        <span w20>{{item.data}}</span>
+        <span>{{item.invoice}}</span>
+        <span>{{item.invoice_date}}</span>
+    </div>
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+  </div>
+
+  <br>

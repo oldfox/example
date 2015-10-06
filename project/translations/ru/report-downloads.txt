@@ -1,0 +1,12 @@
+Header: Выгрузки
+
+column-created_at: Дата/Время
+column-report_type: Отчет
+column-status: Статус
+
+HistoryByDate: Движение номенклатуры по датам
+HistoryByCode: Движение номенклатуры по кодам
+HistoryOfCheckMan: Деятельность контролеров
+HistoryCheckCode: Запросы потребителей
+
+download: Скачать

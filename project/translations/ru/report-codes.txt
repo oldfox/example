@@ -1,0 +1,56 @@
+Header: Данные по коду
+
+NotFound: Код не найден
+
+label-code: Код
+info-submit: Получить информацию
+
+code-info-header: Информация
+
+label-type: Тип
+label-ucnt: Проверок пользователями
+
+label-order: Заказ
+no-order: Не в заказе
+
+label-product: Продукт
+no-product: Не привязан
+
+label-status: Статус
+
+child-group-header: Группа
+no-child-group: Нет привязанных индивидуальных кодов
+group-nomenclature-count: ед.
+
+
+tree-code: Код
+tree-product: Товар
+
+individual-column-code: Код
+individual-column-ean13: Штрих-код
+individual-column-name: Номенклатура
+individual-column-series: Серия
+individual-column-ndesc: Описание
+individual-column-cdate: Дата выпуска
+individual-column-expdate: Годен до
+
+
+historyLastOutCome: Последняя отгрузка
+hist-last-date: Дата/время
+hist-last-operation: Операция
+hist-last-data: Описание
+hist-last-invoice: Накладная
+hist-last-invoice-date: Дата накладной
+hist-last-address: Адрес
+hist-last-comment: Коментарий контролера
+
+hist-last-product: Номенклатура/Серия
+
+historyCheckMan: Объект проверки для Контролера
+historyLastView: История проверок для Контролера
+history: Последние операции
+
+all-history: Вся история
+
+no-children-codes: Нет привязанных кодов
+

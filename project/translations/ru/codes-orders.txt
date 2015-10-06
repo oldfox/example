@@ -1,0 +1,25 @@
+Header: Просмотр заказов
+
+accept-orders-button: Выполнить
+reject-orders-button: Отклонить
+
+Confirm-accept-orders-action: Выполнить заказы ({{n}})?
+Confirm-reject-orders-action: Отклонить заказы ({{n}})?
+
+column-created: Создан
+column-uid: Номер
+column-object: Организация
+column-user: Заказчик
+column-quantity: Кол-во
+column-type: Тип
+column-product: Товарная карта/Серия
+column-status: Статус
+column-updated: Обновлено
+
+column-product-nname: Номенклатура
+column-product-series: Серия
+
+NoOrders: Заказы не найдены
+
+
+print-codes-dialog: Печать кодов

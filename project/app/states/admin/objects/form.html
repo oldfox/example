@@ -1,0 +1,22 @@
+<form name="EditObjectForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  ng-submit="save(EditObject)"
+  >
+
+  <div field label>
+    <input og-validate required type="text" name="name" ng-model="EditObject.name" />
+  </div>
+
+  <div field label>
+    <textarea og-validate type="text" name="address" ng-model="EditObject.address" ></textarea>
+  </div>
+
+  <div field>
+    <button class="btn btn-primary" type="submit" ng-disabled="EditObjectForm.$invalid">
+      <span ng-show="mode=='edit'" translate="{{tc}}.save-button"></span>
+      <span ng-show="mode=='new'" translate="{{tc}}.create-button"></span>
+    </button>
+  </div>
+
+</form>

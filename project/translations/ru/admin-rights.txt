@@ -1,0 +1,4 @@
+Header: Права пользователей
+
+column-name: Название
+column-note: Описание

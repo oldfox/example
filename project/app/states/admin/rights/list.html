@@ -1,0 +1,25 @@
+<div ng-controller="AdminRightsCtrl">
+
+  <div og-datagrid="rights">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span translate="{{tc}}.column-name"></span>
+      <span translate="{{tc}}.column-note"></span>
+
+    </div>
+    <div og-datagrid-item="right">
+      <span>
+        {{right.name}}
+      </span>
+      <span>
+        {{right.note}}
+      </span>
+
+
+    </div>
+  </div>
+
+</div>

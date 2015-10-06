@@ -1,0 +1,11 @@
+Header: Объемы на площадках
+
+label-object: Площадка
+
+column-nname: Номенклатура
+column-claim: Принято
+column-released: Отгружено
+column-defect: Забраковано
+column-remain: Остаток
+
+report-data-submit: Показать

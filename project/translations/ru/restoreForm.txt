@@ -1,0 +1,5 @@
+label-email: Эл. почта
+submitLabel: Отправить
+loginLink: Вход
+
+invalid-email-email: Неправильный формат

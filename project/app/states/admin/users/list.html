@@ -1,0 +1,50 @@
+<div ng-controller="AdminUsersCtrl">
+
+  <div og-datagrid="users" class="st-table">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span translate="{{tc}}.column-name"></span>
+      <span translate="{{tc}}.column-login"></span>
+      <span translate="{{tc}}.column-object"></span>
+      <span translate="{{tc}}.column-roles"></span>
+      <span control></span>
+      <span control>
+        <a class="btn text-primary" ng-click="edit()"><fa-icon plus-square></fa-icon></a>
+      </span>
+    </div>
+    <div og-datagrid-item="user">
+        <span>
+          {{user.name}}
+        </span>
+        <span>
+          {{user.login}}
+        </span>
+        <span>
+          {{user.object.name}}
+        </span>
+        <span>
+          <span ng-show="user.role">
+            {{user.role.description}}
+            &nbsp;&nbsp;
+            <a href="#" ng-click="showPermissionsList(user)" class="text-info fa fa-unlock-alt"></a>
+          </span>
+        </span>
+
+      <span control>
+        <a class="btn text-primary" ng-click="edit(user)"><fa-icon pencil></fa-icon></a>
+      </span>
+      <span control>
+        <a class="btn text-warning" ng-click="delete(user)"><fa-icon trash-o></fa-icon></a>
+      </span>
+    </div>
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+  </div>
+
+</div>

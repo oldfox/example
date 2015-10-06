@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <base href="/"/>
+    <!-- build:css(solutions,../.tmp/serve,../project) app/style.css -->
+      <!-- bower:css -->
+      <!-- endbower -->
+      <!-- inject:css -->
+      <!-- endinject -->
+    <!-- endbuild -->
+    <style type="text/css" no-print>
+      html,body { height: 100%; min-height: 100%; }
+      body { background: #555 url('app-loader.gif') center center no-repeat; }
+    </style>
+    <script type="text/javascript">
+      window.appConfig = window.localConfig = {models:{},states:{},menu:{}};
+    </script>
+    <!--
+            http://www.jonathantneal.com/blog/understand-the-favicon
+            ------------------------------------------
+            icon                                    format      dimensions
+            ------------------------------------------
+            apple-touch-icon                PNG         152x152
+            icon                                    PNG         96x96
+            shortcut icon                       ICO          32x32
+            msapplication-TileImage     PNG         44x144
+        -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="favicon.ico">
+    <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+    <!--<meta name="msapplication-TileColor" content="#eee">-->
+    <!--<meta name="msapplication-TileImage" content="tileicon.png">-->
+  </head>
+  <body translations-include ng-cloak>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <ui-view></ui-view>
+
+
+    <!-- build:js(solutions,../.tmp/serve,../project,../.tmp/partials) app/script.js -->
+      <!-- bower:js -->
+      <!-- endbower -->
+      <!-- inject:js -->
+      <!-- endinject -->
+      <!-- inject:partials -->
+      <!-- endinject -->
+    <!-- endbuild -->
+
+  </body>
+</html>

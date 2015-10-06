@@ -1,0 +1,23 @@
+Header: Утилизация / Изъятие / Подделка
+
+enter-codes-list: По перечню кодов
+label-codesList: Введите коды через запятую
+label-note: Комментарий
+
+enter-codes-date-range: По дате упаковки
+label-createdFrom: С
+label-createdTo: По
+label-series: Серия
+
+
+defected-confirm: Изъятие?
+removed-confirm: Утилизация?
+faked-confirm: Подделка?
+
+defected-success: Коды изъяты
+removed-success: Коды утилизированы
+faked-success: Сигнал принят
+
+refuse-submit: Изъятие
+recovery-submit: Утилизация
+fake-submit: Подделка

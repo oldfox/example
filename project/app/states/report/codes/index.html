@@ -1,0 +1,341 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+
+<br>
+
+<form name="CodesInfoForm"
+      ng-submit="getInfo(CodesInfo)"
+      translate-category="{{tc}}"
+      novalidate autocomplete="off">
+
+  <div field label>
+    <input name="code" required type="text" ng-model="CodesInfo.code"/>
+  </div>
+
+  <div field>
+    <button type="submit" class="btn btn-primary" ng-disabled="CodesInfoForm.$invalid">
+      <span translate="{{tc}}.info-submit"></span>
+    </button>
+  </div>
+</form>
+
+
+<div loader ng-if="process"></div>
+
+<div ng-show="code" class="container-fluid">
+  <h3 translate="{{tc}}.code-info-header"></h3>
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <b translate="{{tc}}.label-code"></b>: {{code.code}}
+
+      <br>
+      <br>
+
+      <b translate="{{tc}}.label-type"></b>: {{code.type.name}}
+
+
+      <div ng-if="code.type.uid==1">
+        <br>
+
+
+        <b translate="{{tc}}.label-product"></b>:
+        <span ng-if="code.product">
+          {{code.product.nomenclature.name}}/{{code.product.series}}
+        </span>
+        <span class="text-warning" ng-if="!code.product">
+          <span translate="{{tc}}.no-product"></span>
+        </span>
+
+      </div>
+      <br>
+
+
+    </div>
+    <div class="col-lg-4">
+      <b>ID</b>: {{code.uid}}
+
+      <br>
+      <br>
+
+
+      <b translate="{{tc}}.label-order"></b>:
+        <span ng-if="code.order">
+          {{code.order.created_at|amDateFormat:'lll'}} ({{code.order.comment}})
+        </span>
+      <span class="text-warning" ng-if="!code.order"><span translate="{{tc}}.no-order"></span></span>
+
+
+      <div ng-if="code.type.uid==1">
+        <br>
+
+        <b translate="{{tc}}.label-ucnt"></b>: {{code.ucnt}}
+      </div>
+
+      <br>
+
+
+    </div>
+    <div class="col-lg-4">
+      <b translate="{{tc}}.label-status"></b>:
+      <span>{{status}}</span>
+    </div>
+    <br>
+  </div>
+
+  <br>
+
+  <div ng-if="code.type.uid==2">
+
+    <h3 translate="{{tc}}.child-group-header"></h3>
+
+    <div >
+
+
+      <div ng-if="!childGroup.length">
+        <span translate="{{tc}}.no-children-codes"></span>
+      </div>
+      <div ng-if="childGroup.length">
+        <span ng-repeat="child in childGroup track by $index">
+           {{child.name}} - {{child.count}}
+          <span translate="{{tc}}.group-nomenclature-count"></span>
+          <span ng-if="!$last">, </span>
+        </span>
+
+
+        <div class="datagrid-table">
+          <div class="datagrid-row og-datagrid-header-row underlined">
+            <span control></span>
+            <span translate="{{tc}}.tree-code"></span>
+            <span translate="{{tc}}.tree-product"></span>
+          </div>
+        </div>
+        <div og-tree-view="childCodes" og-tree-view-item="childCode" class="datagrid-rows-container">
+          <div ng-if="childCode.codeType.uid==2" class="datagrid-row">
+            <span control>
+              <a ng-if="childCode.childGroup" href="#" og-tree-view-open="loadSubItem"><fa-icon plus></fa-icon></a>
+            </span>
+            <span>
+              <b><a ng-href="report/codes?code={{childCode.code}}">{{childCode.code}}</a></b>
+            </span>
+            <span>
+              <span ng-if="!childCode.childGroup.length">-</span>
+              <span ng-repeat="child in childCode.childGroup track by $index">
+                 {{child.name}} - {{child.count}}
+                <span translate="{{tc}}.group-nomenclature-count"></span>
+                <span ng-if="!$last">, </span>
+              </span>
+            </span>
+          </div>
+          <div ng-if="childCode.codeType.uid==1" class="datagrid-row">
+            <span control></span>
+            <span>
+              <a ng-href="report/codes?code={{childCode.code}}">{{childCode.code}}</a>
+            </span>
+            <span>
+              {{childCode.product.nomenclature.name}}/
+              {{childCode.product.series}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--<div ng-if="!childGroup.length">-->
+      <!--<b class="text-warning" translate="{{tc}}.no-child-group"></b>-->
+    <!--</div>-->
+
+  </div>
+
+
+
+
+  <!--<div ng-show="childGroup.length">-->
+    <!--<div og-datagrid="individual">-->
+      <!--<div og-datagrid-tools>-->
+        <!--<div og-datagrid-pagination style="float:right"></div>-->
+      <!--</div>-->
+      <!--<div og-datagrid-header>-->
+        <!--<span translate="{{tc}}.individual-column-code"></span>-->
+        <!--<span translate="{{tc}}.individual-column-ean13"></span>-->
+        <!--<span translate="{{tc}}.individual-column-name"></span>-->
+        <!--<span translate="{{tc}}.individual-column-series"></span>-->
+        <!--<span translate="{{tc}}.individual-column-ndesc"></span>-->
+        <!--<span translate="{{tc}}.individual-column-cdate"></span>-->
+        <!--<span translate="{{tc}}.individual-column-expdate"></span>-->
+      <!--</div>-->
+      <!--<div og-datagrid-item="item">-->
+        <!--<span mark-group-code>{{item.code}}</span>-->
+        <!--<span>{{item.ean13}}</span>-->
+        <!--<span>{{item.name}}</span>-->
+        <!--<span>{{item.series}}</span>-->
+        <!--<span>{{item.ndesc}}</span>-->
+        <!--<span>{{item.cdate|date:'MM yyyy'}}</span>-->
+        <!--<span>{{item.expdate|date:'MM yyyy'}}</span>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+<div ng-if="historyLastOutCome">
+  <h3 translate="{{tc}}.historyLastOutCome"></h3>
+  <div class="datagrid-table">
+    <div class="datagrid-row og-datagrid-header-row underlined">
+      <span translate="{{tc}}.hist-last-date"></span>
+      <span translate="{{tc}}.hist-last-operation"></span>
+      <span translate="{{tc}}.hist-last-data"></span>
+      <span translate="{{tc}}.hist-last-invoice"></span>
+      <span translate="{{tc}}.hist-last-invoice-date"></span>
+      <!--<span translate="{{tc}}.hist-last-address"></span>-->
+      <span translate="{{tc}}.hist-last-comment"></span>
+    </div>
+    <div class="datagrid-row">
+      <span>
+          <span>{{historyLastOutCome.created_at|amDateFormat:'lll'}}</span>
+        </span>
+        <span>
+          <span>{{historyLastOutCome.historyOperation.name}}</span>
+        </span>
+        <span>
+          <span>{{historyLastOutCome.historyData.data}}</span>
+        </span>
+        <span>
+          <span>{{historyLastOutCome.historyData.invoice}}</span>
+        </span>
+        <span>
+          <span>{{historyLastOutCome.historyData.invoice_date}}</span>
+        </span>
+        <!--<span>-->
+          <!--<span>{{historyLastOutCome.historyData.address||'-'}}</span>-->
+        <!--</span>-->
+        <span>
+          <span>{{historyLastOutCome.historyData.comment||'-'}}</span>
+        </span>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div ng-if="history">
+  <a ng-href="/report/nomenclature?code={{code.code}}" class="pull-right" translate="{{tc}}.all-history"></a>
+    <h3 translate="{{tc}}.history"></h3>
+    <div class="datagrid-table">
+      <div class="datagrid-row og-datagrid-header-row underlined">
+        <span translate="{{tc}}.hist-last-date"></span>
+        <span translate="{{tc}}.hist-last-operation"></span>
+        <!--<span translate="{{tc}}.hist-last-product"></span>-->
+        <span w20 translate="{{tc}}.hist-last-data"></span>
+        <span translate="{{tc}}.hist-last-invoice"></span>
+        <span translate="{{tc}}.hist-last-invoice-date"></span>
+        <!--<span translate="{{tc}}.hist-last-address"></span>-->
+
+      </div>
+      <div class="datagrid-row" ng-repeat="operation in history track by $index">
+        <span>
+          <span>{{operation.created_at|amDateFormat:'lll'}}</span>
+        </span>
+        <span>
+          <span>{{operation.historyOperation.name}}</span>
+        </span>
+        <!--<span>-->
+          <!--<span>{{operation.historyOperation.product}}</span>-->
+        <!--</span>-->
+        <span w20>
+          <span>{{operation.historyData.data}}</span>
+        </span>
+        <span>
+          <span>{{operation.historyData.invoice}}</span>
+        </span>
+        <span>
+          <span>{{operation.historyData.invoice_date}}</span>
+        </span>
+        <!--<span>-->
+          <!--<span>{{operation.historyData.address||'-'}}</span>-->
+        <!--</span>-->
+
+      </div>
+    </div>
+    <br>
+  </div>
+
+<div ng-if="historyCheckMan">
+  <h3 translate="{{tc}}.historyCheckMan"></h3>
+  <div class="datagrid-table">
+    <div class="datagrid-row align-top">
+      <span>
+        <b translate="{{tc}}.hist-last-date"></b><br>
+        <span>{{historyCheckMan.created_at|amDateFormat:'lll'}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-operation"></b><br>
+        <span>{{historyCheckMan.historyOperation.name}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-data"></b><br>
+        <span>{{historyCheckMan.historyData.data}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-invoice"></b><br>
+        <span>{{historyCheckMan.historyData.invoice}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-invoice-date"></b><br>
+        <span>{{historyCheckMan.historyData.invoice_date}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-address"></b><br>
+        <span>{{historyCheckMan.historyData.address}}</span>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-comment"></b><br>
+        <span>{{historyCheckMan.historyData.comment}}</span>
+      </span>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div ng-if="historyLastView">
+  <h3 translate="{{tc}}.historyLastView"></h3>
+  <div class="datagrid-table">
+    <div class="datagrid-row " style="padding-bottom: 4px">
+      <span>
+        <b translate="{{tc}}.hist-last-date"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-operation"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-data"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-invoice"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-invoice-date"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-address"></b>
+      </span>
+      <span>
+        <b translate="{{tc}}.hist-last-comment"></b>
+      </span>
+    </div>
+    <div class="datagrid-row" ng-repeat="lw in historyLastView">
+      <span>{{lw.created_at|amDateFormat:'lll'}}</span>
+      <span>{{lw.historyOperation.name}}</span>
+      <span>{{lw.historyData.data}}</span>
+      <span>{{lw.historyData.invoice}}</span>
+      <span>{{lw.historyData.invoice_date}}</span>
+      <span>{{lw.historyData.address}}</span>
+      <span>{{lw.historyData.comment}}</span>
+    </div>
+  </div>
+  <br>
+</div>
+
+</div>
+
+<div ng-if="notFound">
+  <h3 class="alert alert-danger" translate="{{tc}}.NotFound"></h3>
+</div>

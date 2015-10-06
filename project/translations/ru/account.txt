@@ -1,0 +1,8 @@
+Header: Аккаунт пользователя
+label-name: Имя
+label-email: Эл. почта
+label-password: Пароль
+save: Сохранить
+
+invalid-pattern-email: Неправильный формат
+invalid-pattern-password: Длина должна быть более 6 символов

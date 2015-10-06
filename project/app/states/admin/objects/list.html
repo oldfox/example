@@ -1,0 +1,31 @@
+<div ng-controller="AdminObjectsCtrl">
+
+  <div og-datagrid="objects" class="st-table">
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+    <div og-datagrid-header>
+      <span translate="admin-objects.column-name"></span>
+      <span translate="admin-objects.column-address"></span>
+      <span control>
+        <a class="btn text-primary" ng-click="edit()"><fa-icon plus-square></fa-icon></a>
+      </span>
+    </div>
+    <div og-datagrid-item="object">
+        <span>
+          {{object.name}}
+        </span>
+        <span>
+          {{object.address}}
+        </span>
+      <span control>
+        <a class="btn text-primary" ng-click="edit(object)"><fa-icon pencil></fa-icon></a>
+      </span>
+    </div>
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+  </div>
+
+</div>

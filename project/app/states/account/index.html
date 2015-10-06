@@ -1,0 +1,32 @@
+<h2><span translate="account.Header"></span></h2>
+
+<form ng-show="AuthUserProfile"
+      name="AuthUserProfileForm"
+      translate-category="account"
+      ng-submit="saveAccountData(AuthUserProfile)"
+      novalidate autocomplete="off">
+
+  <div field label>
+    <input name="name" og-validate type="text" required ng-model="AuthUserProfile.name"/>
+  </div>
+
+  <div field label>
+    <input name="email" og-validate type="text" pattern="(.*)@(.*)\.(.*)" required ng-model="AuthUserProfile.email"/>
+  </div>
+
+  <div field label>
+    <input name="password" og-validate type="password" pattern="((.*).{6,20})" ng-model="AuthUserProfile.password">
+  </div>
+
+  <br>
+  <div field>
+    <button type="submit" class="btn btn-primary" ng-disabled="AuthUserProfileForm.$invalid">
+      <span translate="account.save"></span>
+    </button>
+  </div>
+
+</form>
+
+<!--<md-progress-circular ng-hide="AuthUserProfile" md-mode="indeterminate"></md-progress-circular>-->
+
+

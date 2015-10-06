@@ -1,0 +1,28 @@
+Header: Номенклатура
+
+column-uid: UID
+column-name: Название
+column-description: Описание
+column-ean13: Штрих-код
+column-expmonth: Срок годности (мес.)
+column-cnt: Упаковок в гофрокоробе
+column-ru: RU
+column-info: Информация
+
+new-nomenclature-dialog: Создание номенклатуры
+edit-nomenclature-dialog: Редактирование номенклатуры
+
+label-name: Название
+label-description: Описание
+label-ean13: Штрих-код
+label-expmonth: Срок годности (мес.)
+label-cnt: Упаковок в гофрокоробе
+label-ru: RU
+label-info: Информация
+
+create-button: Создать
+save-button: Сохранить
+
+confirm-delete: Удалить номенклатуру?
+
+invalid-pattern-ean13: Штрих-код должен состоять из 13 цифр

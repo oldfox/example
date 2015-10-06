@@ -1,0 +1,20 @@
+<div class="navbar-nav" ng-controller="UserButtonsCtrl">
+
+  <a access-auth="false" ui-sref="login"
+      class="btn btn-default navbar-btn"
+      title="{{'authUser.loginButtonTitle'|translate}}">
+    <fa-icon power-off></fa-icon>
+  </a>
+
+  <a access-auth
+     title="{{'authUser.accountButtonTitle'|translate}}"
+     class="btn btn-default navbar-btn"
+     ui-sref="account"><fa-icon user></fa-icon>&nbsp;{{AuthUser.name}}</a>
+  &nbsp;
+  <a access-auth
+     ng-click="confirmLogout()"
+     class="btn btn-default navbar-btn"
+     title="{{'authUser.exitButtonTitle'|translate}}">
+    <fa-icon sign-out></fa-icon>
+  </a>
+</div>

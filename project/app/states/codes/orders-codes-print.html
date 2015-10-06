@@ -1,0 +1,58 @@
+<form class="form-inline">
+
+  <div class="form-group">
+    <label>Размер изображения</label><br>
+    <input type="number" ng-model="cardWidth" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Размер шрифта</label><br>
+    <input type="number" ng-model="fontSize" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Разбиение на страницы</label><br>
+    <input og-checkbox ng-model="oneOnPage" state-on="Один код на страницу" state-off="Автоматически"/>
+  </div>
+
+  <div class="pull-right">
+    &nbsp;<br>
+    <div class="btn btn-primary" ng-click="sendOnPrinter()">
+      <fa-icon print></fa-icon>
+    </div>
+  </div>
+</form>
+<div class="clearfix"></div>
+<style type="text/css">
+  #print-order-codes .datagrid-content {
+    width: 675px;
+    margin:10px auto 0;
+  }
+</style>
+<div id="print-order-codes">
+  <style type="print">
+
+    [og-datagrid] {
+      padding: 0;
+      border: none;
+    }
+    .datagrid-rows-container {
+      border: none;
+    }
+
+  </style>
+  <div og-datagrid="codesGridData" ng-class="{oneonpage:oneOnPage}">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+    <div og-datagrid-item="code"
+         style="background:#fff !important;page-break-inside: avoid;float:left;margin:10px;padding: 10px;text-align:right;border:1px dashed #ccc;"
+         ng-class="{'print-on-new-page':oneOnPage}"
+      >
+        <img ng-src="{{code.dataMatrixUrl}}&size=5" alt="" style="width:{{cardWidth-10}}px;"/><br>
+
+        <b style="font-family:monospace;font-size:{{fontSize}}px">{{code.code}}</b>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+</div>

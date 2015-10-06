@@ -1,0 +1,14 @@
+Header: Роли пользователей
+
+column-name: Название
+column-description: Описание
+
+label-name: Название
+label-description: Права
+
+rights-count: Разрешено: {n}
+
+edit-role-dialog: Редактирование роли
+new-role-dialog: Создание роли
+create-button: Создать
+save-button: Сохранить

@@ -1,0 +1,184 @@
+<aside class="active">
+  <div class="logo">
+    <img src="images/logo.png" alt="iTrack">
+  </div>
+  <nav role="navigation">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-nav">
+        <div class="panel-heading" role="tab" id="heading1">
+          <div class="panel-title">
+            <a data-toggle="collapse" href="#collapse1" aria-expanded="false">Коды</a>
+          </div>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+          <div class="panel-body">
+            <ul role="menu">
+              <li><a href="#">Пункт 1</a></li>
+              <li><a href="#">Пункт 2</a></li>
+              <li><a href="#">Пункт 3</a></li>
+              <li><a href="#">Пункт 4</a></li>
+              <li><a href="#">Пункт 5</a></li>
+              <li><a href="#">Пункт 6</a></li>
+              <li><a href="#">Пункт 7</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-nav">
+        <div class="panel-heading" role="tab" id="heading2">
+          <div class="panel-title">
+            <a data-toggle="collapse" href="#collapse2" aria-expanded="false" class="collapsed">Объекты</a>
+          </div>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+          <div class="panel-body">
+            <ul role="menu">
+              <li><a href="#">Пункт 1</a></li>
+              <li><a href="#">Пункт 2</a></li>
+              <li><a href="#">Пункт 3</a></li>
+              <li><a href="#">Пункт 4</a></li>
+              <li><a href="#">Пункт 5</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-nav">
+        <div class="panel-heading" role="tab" id="heading3">
+          <div class="panel-title">
+            <a data-toggle="collapse" href="#collapse3" aria-expanded="false" class="collapsed">Статистические данные</a>
+          </div>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+          <div class="panel-body">
+            <ul role="menu">
+              <li><a href="#">Пункт 1</a></li>
+              <li><a href="#">Пункт 2</a></li>
+              <li><a href="#">Пункт 3</a></li>
+              <li><a href="#">Пункт 4</a></li>
+              <li><a href="#">Пункт 5</a></li>
+              <li><a href="#">Пункт 6</a></li>
+              <li><a href="#">Пункт 7</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-nav">
+        <div class="panel-heading" role="tab" id="heading4">
+          <div class="panel-title active">
+            <a data-toggle="collapse" href="#collapse4" aria-expanded="false" class="collapsed">Отчеты</a>
+          </div>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+          <div class="panel-body">
+            <ul role="menu">
+              <li class="active"><span>Поступления и траты подразделения</span></li>
+              <li><a href="#">Сделанные посетителями заказы и их стоимость</a></li>
+              <li><a href="#">Статистика звонков потенциальных клиентов</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</aside>
+
+<header>
+  <button type="button" class="navbar-toggle fl">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a href="#" class="logout fr">Выход<span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+</header>
+<div class="main">
+  <div id="content">
+    <ol class="breadcrumb">
+      <li><a href="#">Главная</a></li>
+      <li class="active">Поступления и траты подразделения</li>
+    </ol>
+    <h1>Заголовок (h1)</h1>
+    <h2>Заголовок (h2)</h2>
+    <h3>Заголовок (h3)</h3>
+    <h4>Заголовок (h4)</h4>
+    <h5>Заголовок (h5)</h5>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Почему иррационален ортогональный определитель?</h3>
+        <p>Стимулирование коммьюнити, отбрасывая подробности, существенно стабилизирует рейтинг, не считаясь с затратами. Медиапланирование, как следует из вышесказанного, наиболее полно специфицирует комплексный анализ ситуации. Рекламный блок упорядочивает конструктивный сегмент рынка.</p>
+        <p>This API specifies a protocol for simple wireless interconnection of closely coupled devices operating at 13.56 MHz using Near Field Communication (NFC), which is an international standard (ISO/IEC 18092). To know more, see <a href="#">Technical Specifications</a>.</p>
+        <p>There are three groups of application scenarios for NFC:</p>
+        <p>For more information on the NFC features, see <a href="#">NFC Guide</a>.</p>
+        <p>The ApplicationManager interface also provides methods to launch other applications explicitly and implicitly through the ApplicationControl interface. The ApplicationControl interface consists of an operation, URI, and MIME type and also describes an action to be performed by other applications and can carry the result from the subsequent application. The ApplicationManager interface also provides methods to handle the application lifecycle, to access the installed applications on the device, and to let an application be notified of a change in the application list.</p>
+      </div>
+      <div class="col-md-4">
+        <h4>Нумерованный список</h4>
+        <ol class="list">
+          <li>Exchanging some digital information or data by holding a device close to a wireless tag.</li>
+          <li>Exchanging some information or data between two devices by holding them close to each other.</li>
+          <li>Making payments by holding mobile phones close to point of sales terminals instead of swiping smart cards.</li>
+        </ol>
+        <h4>Маркированный список</h4>
+        <ul class="list">
+          <li>Exchanging some digital information or data by holding a device close to a wireless tag.</li>
+          <li>Exchanging some information or data between two devices by holding them close to each other.</li>
+          <li>Making payments by holding mobile phones close to point of sales terminals instead of swiping smart cards.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tbl">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Параметр</th>
+          <th>Абсолютное значение</th>
+          <th>Относительное значение</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Количество поступивших вызовов</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Количество обработанных вызовов</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Количество потерянных вызовов</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Максимальная глубина очереди</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Максимальное время ожидания ответа</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Среднее время ожидания ответа</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Максимальное время разговора</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        <tr>
+          <td>Среднее время разговора</td>
+          <td>00:00:35</td>
+          <td>00:02:06</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="btn btn_itrack">Отправить</button>
+  </div>
+</div>

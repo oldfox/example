@@ -1,0 +1,52 @@
+<div ng-controller="AdminProductsCtrl">
+
+  <div og-datagrid="products" class="st-table">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span w10 translate="{{tc}}.column-uid"></span>
+      <span translate="{{tc}}.column-nomenclature"></span>
+      <span translate="{{tc}}.column-series"></span>
+      <span translate="{{tc}}.column-dateValidFrom"></span>
+      <span translate="{{tc}}.column-dateValidTo"></span>
+
+      <span control></span>
+      <span control>
+        <a class="btn text-primary" ng-click="edit()"><fa-icon plus-square></fa-icon></a>
+      </span>
+    </div>
+    <div og-datagrid-item="item">
+        <span w10>
+          {{item.uid}}
+        </span>
+        <span>
+          {{item.nomenclature.name}}
+        </span>
+        <span>
+          {{item.series}}
+        </span>
+        <span>
+          {{item.dateValidFrom|date:'MM yyyy'}}
+        </span>
+        <span>
+          {{item.dateValidTo|date:'MM yyyy'}}
+        </span>
+
+
+      <span control>
+        <a ng-if="item.editable" class="btn text-primary" ng-click="edit(item)"><fa-icon pencil></fa-icon></a>
+      </span>
+      <span control>
+        <a ng-if="item.editable" class="btn text-warning" ng-click="delete(item)"><fa-icon trash-o></fa-icon></a>
+      </span>
+    </div>
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+  </div>
+
+</div>

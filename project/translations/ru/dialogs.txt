@@ -1,0 +1,3 @@
+confirmNo: Нет
+confirmYes: Да
+alertOk: OK

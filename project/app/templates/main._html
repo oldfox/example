@@ -1,0 +1,31 @@
+<div id="main-layout">
+
+  <nav class="navbar navbar-default container-fluid" scroll-y-fixed>
+
+    <div class="navbar-brand og-sidebar-toggled-hide">
+      <img src="design/images/logo.png" alt=""/>
+    </div>
+
+    <div class="pull-right" ng-include="'app/components/auth/navbar-user-buttons.html'">
+
+      <!--<div class="navbar-nav">-->
+        <!--<span language-selector></span>-->
+      <!--</div>-->
+
+    </div>
+
+  </nav>
+  <!--<div class="md-toolbar-tools">-->
+
+    <!--<a href="/"><div class="logo"></div></a>-->
+  <!---->
+    <!--<div flex></div>-->
+  <!---->
+    <!--<span language-selector></span>-->
+  <!---->
+    <!--<div ng-include="'app/components/auth/user-buttons.html'"></div>-->
+  <!---->
+  <!--</div>-->
+    <!--<div ng-include="'app/components/navbar/navbar.html'"></md-toolbar>-->
+    <!--<md-content flex layout="row" layout-fill><ui-view flex layout="row" layout-fill></ui-view></md-content>-->
+</div>

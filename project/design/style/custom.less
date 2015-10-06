@@ -1,0 +1,185 @@
+@font-face {
+  font-family: 'museo_sans_cyrl';
+  src: url('../fonts/MuseoSansCyrl_100-webfont.eot');
+  src: url('../fonts/MuseoSansCyrl_100-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansCyrl_100-webfont.woff2') format('woff2'),
+  url('../fonts/MuseoSansCyrl_100-webfont.woff') format('woff'),
+  url('../fonts/MuseoSansCyrl_100-webfont.ttf') format('truetype'),
+  url('../fonts/MuseoSansCyrl_100-webfont.svg#museo_sans_cyrl100') format('svg');
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'museo_sans_cyrl';
+  src: url('../fonts/MuseoSansCyrl_300-webfont.eot');
+  src: url('../fonts/MuseoSansCyrl_300-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansCyrl_300-webfont.woff2') format('woff2'),
+  url('../fonts/MuseoSansCyrl_300-webfont.woff') format('woff'),
+  url('../fonts/MuseoSansCyrl_300-webfont.ttf') format('truetype'),
+  url('../fonts/MuseoSansCyrl_300-webfont.svg#museo_sans_cyrl300') format('svg');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'museo_sans_cyrl';
+  src: url('../fonts/MuseoSansCyrl_500-webfont.eot');
+  src: url('../fonts/MuseoSansCyrl_500-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansCyrl_500-webfont.woff2') format('woff2'),
+  url('../fonts/MuseoSansCyrl_500-webfont.woff') format('woff'),
+  url('../fonts/MuseoSansCyrl_500-webfont.ttf') format('truetype'),
+  url('../fonts/MuseoSansCyrl_500-webfont.svg#museo_sans_cyrl500') format('svg');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'museo_sans_cyrl';
+  src: url('../fonts/MuseoSansCyrl_700-webfont.eot');
+  src: url('../fonts/MuseoSansCyrl_700-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/MuseoSansCyrl_700-webfont.woff2') format('woff2'),
+  url('../fonts/MuseoSansCyrl_700-webfont.woff') format('woff'),
+  url('../fonts/MuseoSansCyrl_700-webfont.ttf') format('truetype'),
+  url('../fonts/MuseoSansCyrl_700-webfont.svg#museo_sans_cyrl700') format('svg');
+  font-weight: 700;
+}
+
+body {
+  background-color: @brand-third!important;
+  font: 300 13px/1.61538 'museo_sans_cyrl', sans-serif;
+}
+
+
+.logo {
+  display: inline-block;
+  width: 97px;
+  height: 25px;
+  background: transparent url(../images/logo.png) no-repeat center center;
+}
+
+
+ul.og-vertical-nav {
+  padding: 25px 0;
+  li {
+    a {
+      padding: 15px 26px;
+    }
+
+    &.vertical-menu-item .children {
+//      зачем?
+//      display: none;
+
+      .sub-menu {
+        background-color: @brand-third-dark;
+        padding: 20px 0;
+        a {
+          padding: 4px 26px;
+        }
+      }
+    }
+
+    &.vertical-menu-item.children-open {
+      .children {
+//        зачем?
+//        display: block;
+      }
+    }
+  }
+  .active-link span {
+    color: @light;
+  }
+}
+
+[og-datagrid] {
+  border: 1px solid @gray-light;
+  padding: 18px;
+  margin-bottom: 18px;
+
+  .datagrid-row {
+    &:nth-child(even) {
+      background-color: @gray-light;
+    }
+    & > span {
+      padding: 20px;
+    }
+  }
+
+  .og-datagrid-header {
+    border-bottom: 1px solid @gray-light;
+  }
+}
+
+form {
+  border: 1px solid @gray-light;
+  background-color: @light;
+  padding: 15px;
+  margin: 10px;
+  .clearfix;
+}
+
+.og-datepicker-input {
+  table {
+    margin: 16px 20px 18px;
+  }
+  .btn {
+    color: @text-primary-light;
+    outline: none;
+    padding: 4px 6px;
+    &.active {
+      background-color: @brand-info;
+      color: @light;
+      .text-info {
+        color: @light;
+      }
+    }
+    &:active:hover, &.active:hover, &:active:focus, &.active:focus {
+      color: @text-primary-light;
+    }
+}
+  th {
+    color: @brand-primary;
+    padding: 4px 6px;
+    text-transform: uppercase;
+    .btn {
+      color: @brand-primary;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.navbar {
+  .logo-image {
+    height: 20px;
+  }
+}
+
+.bg-primary {
+  form {
+    a {
+      color: #fff !important;
+    }
+    .btn-default {
+      border: 1px solid #fff;
+    }
+  }
+}
+
+.group-code {
+  font-weight: bold;
+}
+
+.form-login {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  .form-control {
+    border: none;
+  }
+
+  .btn-default {
+    padding: 9px 40px;
+    &:active, &.active {
+      border: 1px solid @light;
+    }
+    &[disabled] {
+      border: 1px solid @light;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+Header: Движение номенклатуры
+
+by-codes-list: По перечню кодов
+label-codesList: Введите коды через запятую
+
+by-date-from-to: По дате упаковки
+label-createdFrom: С
+label-createdTo: По
+label-series: Серия
+
+column-created_at: Дата/время
+column-code: Код
+column-nname: Номенклатура/Серия
+column-series: Серия
+column-operation: Операция
+column-fio: ФИО
+column-object: Объект
+column-address: Адрес
+column-data: Описание
+column-invoice: Накладная
+column-invoice-date: Дата
+
+group-nomenclature-count: ед.
+
+
+report-data-submit: Показать

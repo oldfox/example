@@ -1,0 +1,36 @@
+<form ng-show="getAuthUserProfile()"
+      name="AuthUserForm"
+      ng-submit="saveAccountData(getAuthUserProfile())"
+      layout="column"
+      novalidate autocomplete="off">
+
+  <div class="dialog-content">
+
+    <md-input-container flex>
+      <label translate="userProfile.label-name"></label>
+      <input type="text" ng-model="getAuthUserProfile().name"/>
+    </md-input-container>
+
+    <md-input-container flex>
+      <label translate="userProfile.label-email"></label>
+      <input type="email" ng-model="getAuthUserProfile().email"/>
+    </md-input-container>
+
+    <md-input-container flex>
+      <label translate="userProfile.label-password"></label>
+      <input type="date" ng-model="getAuthUserProfile().password">
+      <!--<input type="date" ng-model="getAuthUserProfile().birthdate"/>-->
+    </md-input-container>
+
+
+  </div>
+
+  <md-button class="md-primary md-raised">
+    save
+  </md-button>
+</form>
+
+<div class="dialog-content" ng-hide="getAuthUserProfile()">
+load
+</div>
+

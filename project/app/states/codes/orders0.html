@@ -1,0 +1,40 @@
+<h2><span translate="codes-orders.Header"></span></h2>
+
+<md-content flex layout="column" layout-fill class="md-padding">
+
+
+  <md-content layout="row" layout-fill>
+    <md-checkbox ng-click="toggleAll()" aria-label="Check Item" class="md-primary"></md-checkbox>
+    <md-button class="md-primary md-raised" ng-click="setOrders(selectedOrders,'done')">выполнить</md-button>
+  </md-content>
+
+  <md-list ng-if="codesorders.length">
+    <br>
+    <md-divider></md-divider>
+    <md-list-item layout="row" layout-fill>
+      <b style="width: 50px"></b>
+      <p layout="row" layout-fill>
+        <b flex>created</b>
+        <b flex>quantity/prefix/capacity</b>
+        <b flex>type</b>
+        <b flex>status</b>
+      </p>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-divider></md-divider>
+    <md-list-item ng-repeat="order in codesorders" layout="row" layout-fill>
+        <span style="width: 50px">
+      <p layout="row" layout-fill>
+          <md-checkbox ng-model="selectedOrders[order.uid]" aria-label="Check Item" class="md-primary"></md-checkbox>
+        </span>
+        <span flex>{{order.created_at|amDateFormat:'DD-MM-YY, hh:mm'}} ({{order.user.name}},{{order.user.object.name}})</span>
+        <span flex>{{order.quantity}}/{{order.prefix||'-'}}/{{order.capacity}}</span>
+        <span flex>{{order.codetype.name}}</span>
+        <span flex>{{order.status.name}}</span>
+      </p>
+    </md-list-item>
+  </md-list>
+
+  <md-progress-circular ng-if="!codesorders.length" md-mode="indeterminate"></md-progress-circular>
+
+</md-content>

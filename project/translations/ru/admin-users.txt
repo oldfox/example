@@ -1,0 +1,36 @@
+Header: Пользователи
+
+column-name: ФИО
+column-login: Логин
+column-object: Объект
+column-roles: Роль
+
+filter-name: По ФИО
+filter-login: По логину
+filter-object.name: по объекту
+
+label-name: ФИО
+label-login: Логин
+label-email: Эл. почта
+label-active: Активация
+is-active: активный
+is-not-active: не активный
+label-object: Объект
+label-role: Роль
+label-password: Пароль
+generate-password: Сгенерировать пароль
+
+selected-count: Назначено: {n}
+
+edit-user-dialog: Редактирование пользователя
+new-user-dialog: Добавление пользователя
+save-button: Сохранить
+create-button: Создать
+
+confirm-delete: Удалить пользователя?
+
+user-permissions-dialog: Доступные права
+
+invalid-pattern-email: Неправильный формат
+invalid-pattern-password: Длина должна быть более 6 символов
+

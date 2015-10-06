@@ -1,0 +1,24 @@
+Header: Товарные карты
+
+column-uid: UID
+column-nomenclature: Номенклатура
+column-series: Серия
+column-dateValidFrom: Дата выпуска
+column-dateValidTo: Срок годности до
+
+
+new-product-dialog: Создание товарной карты
+edit-product-dialog: Редактирование товарной карты
+
+label-name: Наименование
+label-description: Описание
+label-series: Серия
+label-nomenclature: Номенклатура
+label-dateValidFrom: Дата выпуска
+label-dateValidTo: Срок годности до
+
+label-ru: RU
+label-info: Информация о производителе
+
+create-button: Создать
+save-button: Сохранить

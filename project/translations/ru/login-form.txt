@@ -1,0 +1,7 @@
+label-login: Логин
+label-password: Пароль
+
+login-button: Вход
+
+restore-link: Восстановление доступа
+

@@ -1,0 +1,78 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+
+  <!--<br>-->
+  <!--<div ng-if="codesorders.collection.length">-->
+    <!--<button class="btn btn-primary" ng-click="setOrders('accept',$event)" ng-disabled="!hasSelected()"><span translate="{{tc}}.accept-orders-button"></span></button>-->
+    <!--<button class="btn btn-primary" ng-click="setOrders('reject',$event)" ng-disabled="!hasSelected()"><span translate="{{tc}}.reject-orders-button"></span></button>-->
+  <!--</div>-->
+
+  <br>
+
+  <div og-datagrid="codesorders" class="st-table">
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+      <!--<div og-datagrid-download="downloadParams"></div>-->
+    </div>
+
+    <div og-datagrid-header>
+      <!--<span control>-->
+        <!--<label checkbox ng-click="toggleAll(all=!all)"></label>-->
+      <!--</span>-->
+      <span w15 translate="{{tc}}.column-created"></span>
+      <span w10 translate="{{tc}}.column-uid"></span>
+      <!--<span translate="{{tc}}.column-object"></span>-->
+      <!--<span translate="{{tc}}.column-user"></span>-->
+      <span w10 translate="{{tc}}.column-quantity"></span>
+      <span translate="{{tc}}.column-type"></span>
+      <span translate="{{tc}}.column-product"></span>
+      <span translate="{{tc}}.column-status"></span>
+      <!--<span translate="{{tc}}.column-updated"></span>-->
+    </div>
+
+    <div og-datagrid-item="order">
+        <!--<span control>-->
+          <!--<label checkbox ng-init="selectedOrders[order.uid]=false" ng-model="selectedOrders[order.uid]"></label>-->
+        <!--</span>-->
+        <span w15>
+          {{order.created_at|amDateFormat:'lll'}}
+        </span>
+        <span w10>
+          {{order.uid}}
+        </span>
+        <!--<span>-->
+          <!--{{order.user.object.name}}-->
+        <!--</span>-->
+        <!--<span>-->
+          <!--{{order.user.name}}-->
+        <!--</span>-->
+        <span w10>
+          {{order.quantity}}
+        </span>
+        <span mark-group-code>
+          {{order.codetype.name}}
+        </span>
+        <span>
+          {{order.product ? order.product.nomenclature.name+'/'+order.product.series : '-'}}
+        </span>
+        <span>
+          {{order.status.name}}
+          &nbsp;
+          <span ng-show="order.download">
+            <a access-permissions="generation-download" ng-href="{{order.download}}"><fa-icon download></fa-icon></a>
+            &nbsp;
+            <a access-permissions="generation-print" href="#" ng-click="printCodes(order.uid)"><fa-icon print></fa-icon></a>
+          </span>
+        </span>
+        <!--<span>-->
+          <!--{{(order.updated_at|amDateFormat:'DD-MM-YY, hh:mm')||'n/a yet'}}-->
+        <!--</span>-->
+    </div>
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <span empty-text translate="{{tc}}.NoOrders"></span>
+
+  </div>

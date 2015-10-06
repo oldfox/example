@@ -1,0 +1,14 @@
+Header: Объекты
+column-name: Название
+column-address: Адрес
+
+label-name: Название
+label-address: Адрес
+
+new-object-dialog: Создание объекта
+create-button: Создать
+
+edit-object-dialog: Редактирование объекта
+save-button: Сохранить
+
+empty-list: Объекты не найдены

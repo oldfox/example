@@ -1,0 +1,46 @@
+<div ng-controller="AdminNomenclaturesCtrl">
+
+  <div og-datagrid="nomenclatures" class="st-table">
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+    <div og-datagrid-header>
+      <span w5 translate="{{tc}}.column-uid"></span>
+      <span w10 translate="{{tc}}.column-name"></span>
+      <span w30 translate="{{tc}}.column-description"></span>
+      <span w10 translate="{{tc}}.column-ean13"></span>
+      <span w10 translate="{{tc}}.column-expmonth"></span>
+      <span w10 translate="{{tc}}.column-cnt"></span>
+      <span w10 translate="{{tc}}.column-ru"></span>
+      <span w15 translate="{{tc}}.column-info"></span>
+      <span control></span>
+      <span control>
+        <a class="btn text-primary" ng-click="edit()"><fa-icon plus-square></fa-icon></a>
+      </span>
+    </div>
+    <div og-datagrid-item="item">
+      <span w5>{{item.uid}}</span>
+      <span w10>{{item.name}}</span>
+      <span w30>{{item.description}}</span>
+      <span w10>{{item.ean13}}</span>
+      <span w10>{{item.expmonth}}</span>
+      <span w10>{{item.cnt}}</span>
+      <span w10>{{item.ru}}</span>
+      <span w15>{{item.info}}</span>
+
+      <span control>
+        <a class="btn text-primary" ng-click="edit(item)"><fa-icon pencil></fa-icon></a>
+      </span>
+      <span control>
+        <a class="btn text-warning" ng-click="delete(item)"><fa-icon trash-o></fa-icon></a>
+      </span>
+    </div>
+
+    <div og-datagrid-tools>
+      <div og-datagrid-pagination style="float:right"></div>
+    </div>
+
+  </div>
+
+</div>

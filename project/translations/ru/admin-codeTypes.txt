@@ -1,0 +1,3 @@
+Header: Типы кодов
+
+column-name: Название

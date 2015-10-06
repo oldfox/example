@@ -1,0 +1,30 @@
+<div ng-controller="AdminRolesCtrl">
+
+  <div og-datagrid="roles"class="st-table">
+    <!--<div og-datagrid-pagination></div>-->
+
+    <div og-datagrid-header>
+      <span w30 translate="{{tc}}.column-name"></span>
+      <span translate="{{tc}}.column-description"></span>
+
+      <!--<span control>-->
+        <!--<a class="btn text-primary" ng-click="edit()"><fa-icon plus-square></fa-icon></a>-->
+      <!--</span>-->
+    </div>
+
+    <div og-datagrid-item="role">
+        <span w30>
+          {{role.name||'null'}}
+        </span>
+
+      <span>
+        {{role.description}}
+      </span>
+      <!--<span control>-->
+        <!--<a class="btn text-primary" ng-click="edit(role)"><fa-icon pencil></fa-icon></a>-->
+      <!--</span>-->
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,56 @@
+<form name="EditNomenclatureForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  ng-submit="save(EditNomenclature)"
+  >
+
+  <div field label>
+    <input og-validate
+           required
+           type="text" name="name" ng-model="EditNomenclature.name" />
+  </div>
+
+  <div field label>
+    <textarea og-validate required name="description" ng-model="EditNomenclature.description" ></textarea>
+  </div>
+
+  <div field label>
+    <input og-validate
+           type="text"
+           required
+           pattern="[0-9]{13}"
+           maxlength="13"
+           name="ean13" ng-model="EditNomenclature.ean13" />
+  </div>
+
+  <div field label>
+    <input
+        name="expmonth" ng-model="EditNomenclature.expmonth"
+        og-validate required type="number"
+      />
+  </div>
+
+  <div field label>
+    <input type="number"
+           name="cnt" ng-model="EditNomenclature.cnt"
+           og-validate required
+      />
+  </div>
+
+  <div field label>
+    <input name="ru" ng-model="EditNomenclature.ru" />
+  </div>
+
+  <div field label>
+    <textarea name="info" ng-model="EditNomenclature.info" ></textarea>
+  </div>
+
+
+  <div field>
+    <button class="btn btn-primary" type="submit" ng-disabled="EditNomenclatureForm.$invalid">
+      <span ng-show="mode=='edit'" translate="{{tc}}.save-button"></span>
+      <span ng-show="mode=='new'" translate="{{tc}}.create-button"></span>
+    </button>
+  </div>
+
+</form>

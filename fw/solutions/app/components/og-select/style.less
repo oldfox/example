@@ -1,0 +1,80 @@
+.nya-bs-select {
+  &.btn-group .dropdown-menu li.selected a .check-mark {
+    margin-top: 3px;
+  }
+  .dropdown-toggle {
+
+    .caret {
+      float: right;
+      visibility: hidden;
+      margin-right: 7px;
+      margin-top: -3px;
+      &:after {
+        visibility: visible;
+        display: inline;
+      }
+    }
+  }
+  &.open {
+    .dropdown-toggle {
+      box-shadow: inherit !important;
+      .caret:after {
+        content: '\25B2';
+      }
+    }
+  }
+
+  &.inline {
+    vertical-align: baseline;
+    width: auto !important;
+    text-align: right;
+    padding-right: 15px;
+    padding-left: 10px;
+    .dropdown-toggle {
+      .caret {
+        border:0;
+        margin-right: 0;
+        margin-top: 0;
+        &:after {
+          display: block;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+
+  &.solid {
+    height: auto;
+    .dropdown-menu.open {
+      position: static;
+      display: block;
+      overflow: auto;
+      box-shadow: none;
+      margin: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+    .dropdown-toggle {
+      position: absolute;
+      top:-5px;
+      right: 0;
+      font-size: smaller;
+      width: auto;
+      visibility: hidden;
+      padding: 0;
+      height: auto;
+      cursor: default;
+      .caret {
+        display: none;
+      }
+      .filter-option {
+        visibility: visible;
+        position: absolute;
+        top: -100%;
+        right: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+}

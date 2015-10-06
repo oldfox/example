@@ -1,0 +1,54 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+<br>
+
+<form
+  name="ReportDataForm"
+  translate-category="{{tc}}"
+  ng-submit="getReport()"
+  >
+
+  <div class="row">
+    <div field label class="col-md-4">
+      <og-select size="10" og-validate name="object" ng-model="ReportData.object" required>
+        <option item="obj" list="objects">
+          {{obj.name}}
+        </option>
+      </og-select>
+    </div>
+  </div>
+
+  <br>
+  <div>
+    <button class="btn btn-primary" ng-disabled="ReportDataForm.$invalid">
+      <span translate="{{tc}}.report-data-submit"></span>
+    </button>
+  </div>
+
+</form>
+
+<br>
+
+
+
+<div ng-show="showResultGrid" og-datagrid="reportResult">
+  <div og-datagrid-tools>
+    <div og-datagrid-pagination style="float:right"></div>
+  </div>
+
+  <div og-datagrid-header>
+    <span translate="{{tc}}.column-nname"></span>
+    <span translate="{{tc}}.column-claim"></span>
+    <span translate="{{tc}}.column-released"></span>
+    <span translate="{{tc}}.column-defect"></span>
+    <span translate="{{tc}}.column-remain"></span>
+  </div>
+  <div og-datagrid-item="item">
+    <span>{{item.nname}}</span>
+    <span>{{item.claim}}</span>
+    <span>{{item.released}}</span>
+    <span>{{item.defect}}</span>
+    <span>{{item.remain}}</span>
+  </div>
+</div>
+
+<br>

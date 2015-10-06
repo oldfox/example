@@ -1,0 +1,25 @@
+codes: Коды
+codes-order: Заказ кодов
+codes-orders: Просмотр заказов
+
+recall: Утилизация / Изъятие / Подделка
+
+admin: Справочники
+admin-objects: Объекты
+admin-users: Пользователи
+admin-codeTypes: Типы кодов
+admin-codesOrderStatuses: Статусы кодов
+admin-nomenclatures: Номенклатура
+admin-products: Товарные карты
+admin-roles: Роли
+admin-rights: Права
+
+reports: Отчеты
+
+reports-statistic: Статистика
+reports-nom-move: Движение номенклатуры
+reports-objects-vol: Объемы на площадках
+reports-user-requests: Запросы потребителей
+reports-revisions: Деятельность контролеров
+reports-codes-data: Данные по коду
+reports-downloads: Выгрузки

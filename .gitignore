@@ -1,0 +1,7 @@
+.idea/
+.tmp/
+ogfront/
+dist/local.js
+project/local.js
+
+logs/

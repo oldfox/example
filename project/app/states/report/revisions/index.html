@@ -1,0 +1,81 @@
+<h2><span translate="{{tc}}.Header"></span></h2>
+<br>
+
+<form
+  name="ReportDataForm"
+  translate-category="{{tc}}"
+  ng-submit="getReport(ReportData)"
+  >
+
+  <div class="row">
+
+    <div field label  class="col-md-4">
+      <input og-datepicker
+             name="from" ng-model="ReportData.from"
+             og-validate required
+        />
+    </div>
+
+    <div field label  class="col-md-4">
+      <input og-datepicker
+             name="to" ng-model="ReportData.to"
+             og-validate required
+        />
+    </div>
+
+    <div field label class="col-md-4">
+      <og-select size="10" og-validate name="checkMan" ng-model="ReportData.checkMan" required>
+        <option item="item" list="checkMans">
+          {{item.name}}
+        </option>
+      </og-select>
+    </div>
+
+  </div>
+
+  <br>
+  <div>
+    <button class="btn btn-primary" ng-disabled="ReportDataForm.$invalid">
+      <span translate="{{tc}}.report-data-submit"></span>
+    </button>
+  </div>
+
+</form>
+
+
+<br>
+
+<div ng-show="showResultGrid" og-datagrid="reportResult">
+  <div og-datagrid-tools>
+    <div og-datagrid-download="historyOfCheckMan" style="float:left"></div>
+    <div og-datagrid-pagination style="float:right"></div>
+  </div>
+
+  <div og-datagrid-header>
+    <span translate="{{tc}}.column-created_at"></span>
+    <span translate="{{tc}}.column-fio"></span>
+    <span w20 translate="{{tc}}.column-data"></span>
+    <span translate="{{tc}}.column-name"></span>
+    <span translate="{{tc}}.column-series"></span>
+    <span translate="{{tc}}.column-cdate"></span>
+    <span translate="{{tc}}.column-address"></span>
+    <span translate="{{tc}}.column-comment"></span>
+  </div>
+  <div og-datagrid-item="item">
+    <span>{{item.created_at|amDateFormat:'D-MM-YY'}}<br>{{item.created_at|amDateFormat:'H:mm'}}</span>
+    <span>{{item.fio}}</span>
+    <span w20>{{item.data}}</span>
+    <span>{{item.name}}</span>
+    <span>{{item.series}}</span>
+    <span>{{item.cdate|amDateFormat:'MM YYYY'}}</span>
+    <span>{{item.address}}</span>
+    <span>{{item.comment}}</span>
+  </div>
+
+  <div og-datagrid-tools>
+    <div og-datagrid-pagination style="float:right"></div>
+  </div>
+
+</div>
+
+<br>

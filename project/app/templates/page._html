@@ -1,0 +1,1 @@
+<div ng-include="'app/pages/'+pageName+'.html'"></div>

@@ -1,0 +1,83 @@
+<form name="EditUserForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  ng-submit="save(EditUser)"
+  >
+
+  <div field label>
+    <input og-validate required type="text" name="name" ng-model="EditUser.name" />
+  </div>
+
+  <div field label>
+    <input type="text"
+       name="login" ng-model="EditUser.login"
+        ng-disabled="mode=='edit'"
+        og-validate ng-required="mode=='new'"
+      />
+  </div>
+
+  <div field label>
+    <input og-validate type="password" name="password" ng-model="EditUser.password"
+        ng-required="mode=='new'"
+        pattern="((.*).{6,20})"
+      />
+    <div control open-eye-by-click><a href="#" ng-click="generatePassword()" translate="{{tc}}.generate-password"></a></div>
+  </div>
+
+  <div field label>
+    <input type="text"
+           ng-disabled="mode=='edit'"
+           name="email" ng-model="EditUser.email"
+           og-validate required
+           pattern="{{mode=='new'?'(.*)@(.*)\.(.*)':''}}"
+      />
+  </div>
+
+  <div field label>
+    <input og-checkbox name="active" ng-model="EditUser.active" state-on="{{tc}}.is-active" state-off="{{tc}}.is-not-active"/>
+  </div>
+
+  <div field label>
+
+    <og-select
+     name="object" ng-model="EditUser.object"
+     og-validate required
+     size="5"
+      >
+      <option item="object" list="objects">{{object.name}}</option>
+    </og-select>
+
+  </div>
+
+  <div field label>
+
+    <og-select
+      name="role" ng-model="EditUser.role"
+      og-validate required
+      >
+      <option item="role" list="roles">{{role.description||'null'}}</option>
+    </og-select>
+
+    <!--
+    <og-select
+      name="roles" ng-model="EditUser.roles"
+      og-validate required
+      multiple solid size="5"
+      selected-count-text="admin-users.selected-count"
+      >
+      <option item="role" list="roles">{{role.description||'null'}}</option>
+    </og-select>
+    -->
+
+  </div>
+
+  <br>
+
+  <div field>
+    <button class="btn btn-primary" type="submit" ng-disabled="EditUserForm.$invalid">
+      <span ng-show="mode=='edit'" translate="{{tc}}.save-button"></span>
+      <span ng-show="mode=='new'" translate="{{tc}}.create-button"></span>
+    </button>
+  </div>
+
+</form>

@@ -1,0 +1,17 @@
+Header: Деятельность контролеров
+
+label-from: С
+label-to: По
+label-checkMan: Контролер
+
+report-data-submit: Посмотреть
+
+
+column-created_at: Дата/время
+column-fio: ФИО
+column-data: Комментарий
+column-name: Товарная карта
+column-series: Серия
+column-cdate: Дата производства
+column-address: Адрес
+column-comment: Комментарий контролера

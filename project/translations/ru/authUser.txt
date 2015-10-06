@@ -1,0 +1,7 @@
+accountButtonTitle: Профиль пользователя
+exitButtonTitle: Выход
+exitConfirm: Выйти?
+logoutInfo: Пользователь вышел из системы
+loginButtonTitle: Вход
+loginLabel: Вход
+loggedInfo: Пользователь {{name}} вошел в систему

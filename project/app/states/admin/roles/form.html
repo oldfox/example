@@ -1,0 +1,38 @@
+<form name="EditRoleForm"
+  translate-category="{{tc}}"
+  novalidate autocomplete="off"
+  ng-submit="save(EditRole)"
+  >
+
+  <div field label>
+    <input og-validate required type="text" name="name" ng-model="EditRole.name" />
+  </div>
+
+  <div field label>
+    <textarea og-validate required name="description" ng-model="EditRole.description"></textarea>
+  </div>
+
+  <div field label>
+
+    <og-select multiple solid size="10"
+
+      selected-text-format="count>0"
+      selected-count-text="admin-roles.rights-count"
+
+      name="permissions" ng-model="EditRole.permissions"
+
+      og-validate required
+      >
+      <option item="permission" list="permissions" title="{{permission.name}}">{{permission.name}}</option>
+    </og-select>
+
+  </div>
+
+  <div field>
+    <button class="btn btn-primary" type="submit" ng-disabled="EditRoleForm.$invalid">
+      <span ng-show="mode=='edit'" translate="{{tc}}.save-button"></span>
+      <span ng-show="mode=='new'" translate="{{tc}}.create-button"></span>
+    </button>
+  </div>
+
+</form>

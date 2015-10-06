@@ -1,0 +1,100 @@
+<div og-sidebar-layout full-height scroll-y-container class="toggled">
+
+    <div og-sidebar class="bg-dark">
+
+      <div class="navbar container-fluid bg-primary" scroll-y-fixed>
+        <div class="navbar-nav og-sidebar-toggled-show">
+          <a href="/" class="btn navbar-btn"><img src="images/logo.png" alt="" class="logo-image" /></a>
+        </div>
+      </div>
+
+      <div og-sidebar-menu scroll-y>
+
+        <div og-vertical-nav="{{getStateMenu()||'mainMenu'}}"></div>
+
+      </div>
+
+    </div>
+
+    <div og-sidebar-layout-content style="background: #fafafa">
+
+        <nav class="navbar container-fluid bg-primary" scroll-y-fixed>
+
+          <div class="navbar-nav">
+            <a og-sidebar-toggle class="btn btn-default navbar-btn"><fa-icon bars></fa-icon></a>
+          </div>
+
+          <div class="navbar-brand og-sidebar-toggled-hide">
+            <a href="/"><img src="images/logo.png" alt="" class="logo-image"/></a>
+          </div>
+
+          <div class="pull-right" ng-include="'app/components/auth/navbar-user-buttons.html'">
+
+            <!--<div class="navbar-nav">-->
+              <!--<span language-selector></span>-->
+            <!--</div>-->
+
+          </div>
+
+        </nav>
+
+        <div scroll-y>
+
+          <div class="container-fluid" padded>
+            <div ui-view></div>
+          </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div id="panels" layout="row" layout-fill ng-controller="PanelsCtrl">-->
+
+  <!--<md-sidenav id="panels-sidenav" class="md-whiteframe-z1" md-is-locked-open="!sideBarClosed">-->
+    <!--<md-toolbar layout-align="center center">-->
+      <!--<a href="/" class="logo md-button" ng-style="sideBarClosed?{opacity:0}:{opacity:1}"></a>-->
+    <!--</md-toolbar>-->
+    <!--<md-content flex class="left-panel-content">-->
+
+      <!--<div vertical-menu="{{getStateMenu()||'mainMenu'}}"></div>-->
+
+    <!--</md-content>-->
+  <!--</md-sidenav>-->
+
+  <!--<div id="panels-content" flex layout="column">-->
+
+    <!--<md-toolbar >-->
+      <!--<div class="md-toolbar-tools" nginit="sideBarClosed=!$mdMedia('gt-md')">-->
+        <!--<md-button ng-click="sideBarClosed=!sideBarClosed" md-no-ink aria-label="Toggle Sidebar"><md-icon menu></md-icon></md-button>-->
+
+        <!--<span flex layout="row" layout-align="center center"><a href="/" class="logo md-button" ng-style="sideBarClosed?{opacity:1}:{opacity:0}" ></a></span>-->
+
+        <!--<span language-selector></span>-->
+
+        <!--<div ng-include="'app/components/auth/user-buttons.html'"></div>-->
+
+      <!--</div>-->
+    <!--</md-toolbar>-->
+
+
+    <!--<md-content flex class="md-padding right-panel-content" layout="column" layout-fill>-->
+      <!--<div flex ui-view></div>-->
+    <!--</md-content>-->
+
+  <!--</div>-->
+
+<!--</div>-->

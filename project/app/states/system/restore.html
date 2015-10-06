@@ -1,0 +1,24 @@
+<form
+  name="restoreFormForm" novalidate ng-controller="AuthCtrl"
+  ng-submit="restoreFormSubmit()"
+  translate-category="restoreForm"
+  >
+
+  <div field label>
+    <input
+      og-validate
+      type="email" pattern="(.*)@(.*)\.(.*)" required
+      name="email" ng-model="restoreForm.email">
+  </div>
+
+
+  <button class="btn btn-default" ng-disabled="restoreFormForm.$invalid">
+      <span translate="restoreForm.submitLabel"></span>
+  </button>
+
+  <div class="pull-right">
+    <br>
+    <a ui-sref="login"><span translate="restoreForm.loginLink"></span></a>
+  </div>
+
+</form>

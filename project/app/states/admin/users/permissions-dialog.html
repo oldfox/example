@@ -1,0 +1,7 @@
+<span loader ng-if="!permissions"></span>
+
+<ul ng-if="permissions">
+  <li ng-repeat="perm in permissions" title="{{perm.name}}">
+    {{perm.description}}
+  </li>
+</ul>
